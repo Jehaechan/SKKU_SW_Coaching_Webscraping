@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f6169b8cc4",applicationID:"100041457"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://dcf.espn.com/TWDC-DTCI/prod/Bootstrap.js"></script>
+	<title>Are Ambitious Parts Of Democrats&#8217; Agenda Good For Democracy &#8230; Or Just The Democratic Party? | FiveThirtyEight</title>
+<!-- Jetpack Site Verification Tags -->
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/decimamonopro-webfont.woff2"
+			crossorigin="anonymous">
+				<link rel='dns-prefetch' href='//cdn.registerdisney.go.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//www.googleadservices.com' />
+<link rel='dns-prefetch' href='//adservice.google.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='stylesheet' id='all-css-0' href='https://fivethirtyeight.com/_static/??-eJxtzVEKwjAQBNALma5VqPRDPEuabpvFZBOym0pub0EEKX7PzBt4ZUPsQp1RwInATKIwheSeJtBUbGkg2gJ2kbjbCyfYFy6xIivkUFdigZUWk4NtZqqqicGKoH68Q/SXUY9xv0fJbBbaUD0VbUir11/qEH2pR7z3Q38bz9dxuLwBMQVNsQ==' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<script id='disney-oneid-js-extra'>
+var DisneyOneID = {"config":{"clientId":"DATG-FIVETHIRTYEIGHT.WEB-PROD","langPref":"en-US","debug":false,"responderPage":"https:\/\/fivethirtyeight.com\/oneid-responder","campaignName":"FiveThirtyEight"}};
+</script>
+<script src='https://cdn.registerdisney.go.com/v2/outer/DisneyID.js?clientID=DATG-FIVETHIRTYEIGHT.WEB-PROD' id='disney-oneid-js'></script>
+<script id='taboola-js-extra'>
+var ESPNTaboola = {"publisher":"abcnews-fivethirtyeight","type":"article"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJydkV1OxDAMhC9ENrsCIfYBcZaQTFuX1Amx06q3p+yuoCAoP0+WbI/1jcdO2fjEClabY22JxQYSxmwGiLil0VonAhXbi00MCruBeNfLlV20xD7WgNOwf64o86X8askM1BanWC9/poFkNpI8ubgCaZzHY0pPf1fqRKooJpc0ZN3SV6VISgv3u3qkgLQl2njeCA6p2FwLNfM/bzAmiXg18KNzdcuDoltbP3e+i6ZyQBGfypd5aIcF6Hy6oRHaUdEZ1Ha6zuXjxHRw4Y31Ybg/3B5u9vvj3fG6fwEaPfBD'></script>
+<script async="async" defer="defer" src='https://platform.twitter.com/widgets.js?ver=1.0.24' id='platform-twitter-js'></script>
+<script id='abc-analytics-js-extra'>
+var ABCAnalytics = {"nielsen":{"asset_id":307679,"section":"politicsdemocratic-party","seg_a":"","seg_b":"","seg_c":"","debug":""},"chartbeat":{"uid":"12240","domain":"fivethirtyeight.com","path":"\/features\/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party\/","sections":"politics,features","authors":"Sarah Frostenson","title":"Are Ambitious Parts Of Democrats\u2019 Agenda Good For Democracy \u2026 Or Just The Democratic Party?","loadPubJS":false,"loadVidJS":true},"gtm":{"id":"GTM-KLHT6T2"},"omniture":{"pageName":"politics:features:are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party","prop1":"fivethirtyeight","prop2":"","prop5":"features","prop6":"Sarah Frostenson","prop7":"politics","prop8":"politics:democratic-party","prop12":"Are Ambitious Parts Of Democrats\u2019 Agenda Good For Democracy \u2026 Or Just The Democratic Party?","prop13":"307679:Are Ambitious Parts Of Democrats\u2019 Agenda Good For Democracy \u2026 Or Just The Democratic Party?","prop14":"","prop15":"https:\/\/fivethirtyeight.com\/features\/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party\/","prop16":"https:\/\/fivethirtyeight.com\/features\/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party\/","prop20":"Desktop","prop23":"Congress, Democratic Party, Joe Biden, Senate Democrats, Slack Chat, The Biden Administration","eVar5":"features","eVar6":"Sarah Frostenson","eVar7":"politics","eVar8":"politics:democratic-party","eVar9":"2021-04-14","eVar10":"06:00","eVar12":"Are Ambitious Parts Of Democrats\u2019 Agenda Good For Democracy \u2026 Or Just The Democratic Party?","eVar13":"307679:Are Ambitious Parts Of Democrats\u2019 Agenda Good For Democracy \u2026 Or Just The Democratic Party?","eVar14":"","eVar15":"https:\/\/fivethirtyeight.com\/features\/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party\/","eVar16":"https:\/\/fivethirtyeight.com\/features\/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party\/","eVar20":"Desktop","eVar21":null,"eVar22":null,"prop35":"2021-04-14"},"account":"wdgnewfivethirtyeight"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/wp-content/plugins/abc-analytics/assets/js/analytics.min.js?m=1612892661g'></script>
+<link rel="https://api.w.org/" href="https://fivethirtyeight.com/wp-json/" /><link rel="alternate" type="application/json" href="https://fivethirtyeight.com/wp-json/wp/v2/fte_features/307679" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fivethirtyeight.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fivethirtyeight.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6.2" />
+<link rel='shortlink' href='https://53eig.ht/3uTHcWd' />
+<link rel="alternate" type="application/json+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fare-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fare-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party%2F&#038;format=xml" />
+        <style>
+        .getty.aligncenter {
+            text-align: center;
+        }
+        .getty.alignleft {
+            float: none;
+            margin-right: 0;
+        }
+        .getty.alignleft > div {
+            float: left;
+            margin-right: 5px;
+        }
+        .getty.alignright {
+            float: none;
+            margin-left: 0;
+        }
+        .getty.alignright > div {
+            float: right;
+            margin-left: 5px;
+        }
+        </style>
+        <style type='text/css'>img#wpstats{display:none}</style>
+		<link rel="amphtml" href="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Are Ambitious Parts Of Democrats&#8217; Agenda Good For Democracy &#8230; Or Just The Democratic Party?" />
+<meta property="og:url" content="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/" />
+<meta property="og:description" content="Welcome to FiveThirtyEight’s politics chat. The transcript below has been lightly edited. sarah (Sarah Frostenson, politics editor): With unified control of the&#8230;" />
+<meta property="article:published_time" content="2021-04-14T10:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-14T10:00:00+00:00" />
+<meta property="og:site_name" content="FiveThirtyEight" />
+<meta property="og:image" content="https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-16x9-1.png?w=700" />
+<meta property="og:image:width" content="700" />
+<meta property="og:image:height" content="394" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://fivethirtyeight.com/contributors/sarah-frostenson/" />
+<meta property="article:publisher" content="https://www.facebook.com/fivethirtyeight" />
+<meta property="fb:app_id" content="797620670264818" />
+<meta property="fb:pages" content="687958677914631" />
+<meta name="twitter:site" content="FiveThirtyEight" />
+<meta name="twitter:site:id" content="2303751216" />
+<meta name="twitter:widgets:csp" content="on" />
+<meta name="twitter:maxage" content="300" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="sfrostenson" />
+<meta name="twitter:creator:id" content="863655547" />
+<meta name="twitter:image:src" content="https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-16x9-1.png?w=700" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="A FiveThirtyEight Chat" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Congress, Democratic Party, Joe Biden, Senate Democrats, Slack Chat, The Biden Administration" />
+
+<!-- End Jetpack Open Graph Tags -->
+<meta name="DC.date.issued" content="2021-04-14T10:00:00+00:00" />
+<meta name="description" content="Welcome to FiveThirtyEight’s politics chat. The transcript below has been lightly edited. sarah (Sarah Frostenson, politics editor): With unified control of the&#8230;" />
+<meta name='author' content='Sarah Frostenson' />
+<link rel='author' href='https://fivethirtyeight.com/contributors/sarah-frostenson/' />
+<link rel="alternate" type="application/rss+xml" title="Posts feed for Sarah Frostenson" href="https://fivethirtyeight.com/contributors/sarah-frostenson/feed/">
+<link type="text/plain" rel="author" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/humans.txt" /><link rel='canonical' href='https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/' />
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/"},"headline":"Are Ambitious Parts Of Democrats&#8217; Agenda Good For Democracy &#8230; Or Just The Democratic Party?","datePublished":"2021-04-14T06:00:00-04:00","dateModified":"2021-04-15T12:34:06-04:00","publisher":{"@type":"Organization","name":"FiveThirtyEight","logo":{"url":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-rich-snippets.png","height":60,"width":546,"@type":"ImageObject"}},"author":{"@type":"Person","name":"A FiveThirtyEight Chat"},"articleSection":"Politics","image":{"@type":"ImageObject","url":"https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=1024","width":1024,"height":768}}
+</script>
+		<style type="text/css" id="wp-custom-css">
+			section.viz {
+background-color: #fff;
+}
+div.liveblog-entry-content>header.single-post-header{
+display: none;
+}		</style>
+			<link rel="mask-icon" color="#ed713a" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-black.svg?v=1.0.24">
+	<link rel="shortcut icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/favicon.ico?v=1.0.24">
+	<link rel="apple-touch-icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-touch.png?v=1.0.24">
+</head>
+<body class="fte_features-template-default single single-fte_features postid-307679 vertical-politics slug-are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party topic-slug-democratic-party">
+
+<a href="#content" class="skip-to-content-link visually-hidden">Skip to main content</a>
+<div id="masterad" class="master-ad">
+	<div id="ad-Banner" class="ad-banner" data-defer="none"></div></div><!-- #masterad -->
+<i class="header-global-bground"></i>
+<header class="header-global" id="header-global">
+	<div class="site-wrapper header-global-top">
+							<h2 class="header-global-logo">
+							<a href="/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Home" class="header-global-logo-link">
+					<span class="visually-hidden">FiveThirtyEight</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="163.451" viewBox="0 318.275 1280 163.451" class="site-logo"><path d="M0 318.275h76.009v24.323H27.363v30.403h45.606v24.323H27.363v51.687H0zm94.252 109.453h15.202v-54.727H94.252v-24.323h39.525v79.05h12.162v21.283H94.252v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm434.774 109.453h15.202v-54.727h-15.202v-24.323h39.525v79.05h12.162v21.283h-51.686v-21.283zm15.202-109.453h24.323v24.323H559.43v-24.323zm401.33 109.453h15.202v-54.727H960.76v-24.323h39.525v79.05h12.161v21.283H960.76v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm-811.781 82.09v-51.687h24.323v45.606l12.161 30.343h3.04l12.162-30.343v-45.606h24.323v51.687l-21.283 48.646h-33.444zm173.301 48.646h-41.288c-24.901 0-37.762-11.584-37.762-35.968v-27.88c0-23.016 13.074-39.525 39.525-39.525 28.367 0 39.525 15.415 39.525 42.565v21.283h-51.686v5.29c0 7.966 3.04 12.952 10.398 12.952h41.288v21.283zm-51.686-60.808h24.323v-4.713c0-7.966-3.223-16.57-12.557-16.57-8.483 0-11.766 6.689-11.766 16.57v4.713zm94.251-45.605h-30.403v-24.323h88.171v24.323h-30.404v106.413h-27.364zm234.11 106.413V348.678h24.323v12.161c3.466-7.449 11.401-12.161 21.952-12.161h8.452v24.323h-18.242c-8.635 0-12.161 2.858-12.161 11.857v64.152h-24.324zm130.736 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283h21.283v24.323H723.61l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374h10.368v21.282zm535.107 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283H1280v24.323h-21.283l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374H1280v21.282zm-506.953 32.714l14.016-28.883-23.928-52.477v-51.687h24.323v45.606l12.162 30.404h3.04l12.162-30.404v-45.606h24.323v51.687l-37.397 81.36zm90.421-163.45h76.009v24.323h-48.646v27.363h45.606v24.323h-45.606v30.404h48.646v24.323h-76.009zm161.14 145.938v-6.081h48.95c6.081 0 8.817-.547 8.817-3.861v-1.034c0-3.284-2.767-4.226-8.817-4.226h-39.829v-15.202l15.202-15.202c-16.084-4.5-24.323-16.509-24.323-33.444v-3.04c0-22.985 13.499-36.485 42.565-36.485a66.672 66.672 0 0 1 18.09 3.04l12.313-18.242 15.202 9.121-12.161 18.242c4.165 5.868 9.121 14.989 9.121 24.323v3.04c0 21.283-10.033 32.41-36.484 33.444l-9.121 12.161h18.242c17.999 0 27.363 7.966 27.363 23.35v.334c0 15.384-8.239 24.962-26.208 24.962h-39.525c-13.043.002-19.397-5.593-19.397-15.2zm57.767-76.01v-9.121c0-10.033-4.044-12.161-15.202-12.161-11.158 0-15.202 2.128-15.202 12.161v9.121c0 10.033 4.226 12.162 15.202 12.162s15.202-2.128 15.202-12.162zm72.969 60.808h-24.323V318.275h24.323v42.565c3.466-8.118 10.337-12.161 21.283-12.161 19.033 0 27.363 9.364 27.363 32.714v67.618h-24.323v-63.848c0-9.516-3.253-15.202-12.162-15.202-8.908 0-12.161 5.686-12.161 15.202v63.848zm-678.004 0h-24.323V318.275h24.323v42.565c3.466-8.118 11.888-12.161 22.772-12.161 19.033 0 25.874 9.516 25.874 32.867v67.466h-24.323v-66.888c0-9.516-3.253-13.499-12.161-13.499s-12.162 6.871-12.162 16.388v63.998z"/></svg>					<img src="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-color.svg" alt="FiveThirtyEight" width="57" height="55" class="site-logo-small" id="site-logo-small" />
+				</a>
+							</h2>
+			
+			<form action="https://fivethirtyeight.com/" method="get" id="searchform" class="search-form">
+				<label for="search-field" class="search-form-label">Search</label>
+				<div class="search-form-input-wrapper"><input type="search" name="s" id="search-field" class="search-form-input" placeholder="Search" tabindex="-1"></div>
+				<input type="submit" value="Search" class="search-form-submit" tabindex="-1">
+				<button aria-label="Search" class="search-button" id="search-button">
+					<span class="visually-hidden">Search</span>
+				</button>
+			</form>
+
+			<a href="https://abcnews.go.com/" rel="noopener" title="ABC News" target="_blank" class="header-espn-link" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+				<svg width="65" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M25.089 6.709c-.47-.496-.974-.798-1.322-.798h-.313v-.275h.261c.121 0 1.548.058 1.687.058.227 0 .886-.058 1.026-.058h.278l6.618 7.345V7.187c0-.921-.4-1.276-1.407-1.276h-.296v-.275h.313c.035 0 1.529.058 1.65.058.173 0 1.164-.058 1.355-.058h.192l.017.275c-.922.071-1.165.32-1.165 1.135v9.16h-.312l-7.904-8.77v6.6c0 1.384.314 1.756 1.46 1.756h.295v.296h-.331c-.243 0-1.441-.06-1.72-.06-.156 0-1.269.06-1.512.06h-.279v-.296c1.166-.107 1.41-.302 1.41-1.153v-7.93h-.001zm11.98.106c0-.691-.261-.904-1.079-.904h-.26v-.275h.678c.47 0 3.008.058 3.026.058.364 0 2.777-.058 3.296-.058h.695l.035 2.277h-.27c-.053-1.188-.58-1.667-1.795-1.667h-2.43v4.026h2.1c.816 0 1.268-.39 1.389-1.225l.31.018v3.178h-.293c-.138-.993-.642-1.383-1.857-1.383h-1.666v3.672c0 .603.296.905.885.905h1.736c1.126 0 1.944-.515 2.43-1.58h.314l-.731 2.23c-.505 0-2.898-.058-3.696-.058-.539 0-3.13.04-3.722.058h-.452v-.295h.278c.818-.017 1.08-.23 1.08-.923V6.815zm16.701 9.41h-.487l-1.984-5.511-2.035 5.512h-.47L45.4 6.975c-.26-.71-.505-.993-.957-1.08v-.26h.296c.191 0 1.149.059 1.375.059.191 0 1.182-.058 1.391-.058h.314v.275c-.505.019-.714.16-.714.443 0 .16.052.39.14.639l2.383 6.557 1.357-3.74-.887-2.516c-.383-1.081-.714-1.364-1.55-1.383v-.275h.28c.243 0 1.496.058 1.793.058.242 0 1.495-.058 1.773-.058h.417v.275h-.417c-.574 0-.852.142-.852.443 0 .16.07.444.174.727l2.314 6.522 1.827-5.53c.226-.709.33-1.17.33-1.453 0-.496-.243-.71-.782-.71h-.313v-.274h.087c.243 0 .851.058 1.217.058.173 0 .851-.058 1.18-.058h.123v.275c-.436.125-.66.443-1.007 1.525l-2.923 8.79zm4.01-2.563c.278.688.52 1.008.988 1.361.59.46 1.37.69 2.237.69 1.491 0 2.497-.796 2.497-1.946 0-.85-.486-1.31-2.282-2.175-1.74-.85-2.174-1.274-2.538-1.628-.537-.584-.762-1.114-.762-1.822 0-1.627 1.3-2.704 3.265-2.704.592 0 1.236.088 1.933.264.278.07.557.106.714.106.138 0 .209-.035.26-.153h.3l.034 2.229h-.247c-.156-.531-.26-.76-.487-1.05-.488-.585-1.254-.903-2.237-.903-1.248 0-2.064.601-2.064 1.504 0 .778.47 1.22 2.134 1.998 2.134 1.008 3.426 1.911 3.426 3.573 0 1.91-1.537 3.2-3.807 3.2a8.04 8.04 0 0 1-1.838-.229 3.676 3.676 0 0 0-.624-.089c-.209 0-.277.036-.415.2h-.295l-.035-.248c-.118-.7-.258-1.398-.418-2.09l.261-.089zM3.97 9.732c-.262 0-.51.06-.73.168-.587.291-.957.89-.955 1.546 0 .946.755 1.714 1.684 1.714.931 0 1.684-.768 1.684-1.714 0-.947-.753-1.715-1.684-1.715zm7.259 0c-.93 0-1.685.767-1.685 1.714 0 .946.754 1.714 1.685 1.714.93 0 1.684-.768 1.684-1.714 0-.947-.755-1.715-1.684-1.715z"/><path d="M18.47 14.875c-1.862 0-3.37-1.535-3.37-3.43 0-1.893 1.508-3.428 3.37-3.428 1.596 0 2.932 1.132 3.28 2.65h-1.78a1.68 1.68 0 0 0-1.5-.936c-.932 0-1.686.768-1.686 1.715 0 .946.754 1.714 1.685 1.714a1.68 1.68 0 0 0 1.502-.94l1.783-.017c-.339 1.53-1.68 2.672-3.285 2.672zm-7.241 0c-1.853 0-3.356-1.522-3.369-3.405l-.04-6.016h1.704l.01 3.228c.499-.396 1.077-.665 1.695-.665 1.86 0 3.368 1.535 3.368 3.429s-1.509 3.429-3.368 3.429zm-5.546 0l-.007-.859c-.382.389-1.043.859-1.824.859-1.86 0-3.251-1.535-3.251-3.43 0-1.893 1.508-3.428 3.368-3.428.29 0 .573.037.843.108 1.453.38 2.526 1.723 2.526 3.32v.01l.02 3.42H5.682zM11.229.017C5.027.017 0 5.134 0 11.446s5.027 11.43 11.229 11.43c6.2 0 11.228-5.118 11.228-11.43 0-6.312-5.028-11.429-11.228-11.429z"/></svg>			</a>
+
+			<span class="nav-global-toggle" id="nav-global-toggle">Menu</span>
+
+	</div>
+			<div class="single-sticky">
+									<div class="single-sticky-vertical"></div>
+				<div class="single-sticky-title">
+											Are Ambitious Parts Of Democrats&#8217; Agenda Good For Democracy &#8230; Or Just The Democratic Party?									</div>
+				<a href="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/?share=facebook" class="button share-sticky sticky-facebook">Share on Facebook</a>
+				<a href="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/?share=twitter"  class="button share-sticky sticky-twitter">Share on Twitter</a>
+						</div>
+			<div class="site-wrapper header-global-bottom">
+		<nav class="nav-global" id="nav-global">
+			<ul class="nav-global-menu">
+				<li class="nav-global-menu-item menu-politics -current-vertical">
+					<a href="https://fivethirtyeight.com/politics/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Politics">
+						Politics					</a>
+				</li>
+				<li class="nav-global-menu-item menu-sports">
+					<a href="https://fivethirtyeight.com/sports/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Sports">
+						Sports					</a>
+				</li>
+				<li class="nav-global-menu-item menu-science">
+					<a href="https://fivethirtyeight.com/science/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Science">
+						Science					</a>
+				</li>
+				<li class="nav-global-menu-item menu-podcast">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Podcasts">
+						Podcasts					</a>
+				</li>
+				<li class="nav-global-menu-item menu-video">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Video">
+						Video					</a>
+				</li>
+				<li class="nav-global-menu-item menu-abcn -mobile-only">
+					<a href="https://abcnews.go.com/" rel="noopener" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+						ABC News					</a>
+				</li>
+			</ul>
+
+			
+	
+		</nav><!-- #nav-global -->
+		</div><!-- .site-wrapper -->
+</header><!-- #header-global -->
+
+
+<div class="site-main">
+	<div id="wrapper" class="site-wrapper">
+
+		
+	<div id="content" class="single single-feature" data-col="2">
+
+		
+		<div class="single-feature__row">
+			<div id="primary" class="single-feature__col">
+				<div id="article-main">
+					<article id="post-307679" class="post-307679 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-congress tag-democratic-party tag-joe-biden tag-senate-democrats tag-slack-chat tag-the-biden-administration espn_verticals-politics vertical-politics topic-slug-democratic-party">
+
+						
+												<header class="post-info single-post-header">
+														<p class="topic single-topic">
+								<time class="datetime">Apr. 14, 2021</time>,
+								at
+								<time class="datetime updated" title="2021-04-14T10:00:00+00:00">6:00 AM</time>
+
+							</p>
+							
+							<div class="single-header">
+								<h1 class="article-title article-title-single entry-title">
+									Are Ambitious Parts Of Democrats&#8217; Agenda Good For Democracy &#8230; Or Just The Democratic Party?								</h1>
+
+															</div>
+
+							<div class="single-header-metadata-and-share-wrap">
+								<div class="single-header-metadata-wrap">
+																			<p class="single-metadata single-byline vcard"><span class="author fn">A FiveThirtyEight Chat</span></p>
+										
+																		<p class="single-metadata single-topic">Filed under <a href="https://fivethirtyeight.com/tag/democratic-party/" class="term " name="">Democratic Party</a></p>
+										
+										
+																	</div>
+								<div class="share">
+									<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-307679" class="share-facebook sd-button share-icon" href="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-307679" class="share-twitter sd-button share-icon" href="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="fte-email-share sd-button share-icon" href="mailto:?subject=I thought you’d like this article from FiveThirtyEight&body=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fare-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party%2F?ex_cid=538email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>								</div> <!-- .share -->
+							</div>
+
+						</header><!-- .post-info -->
+
+
+							
+<figure id="single-featured-image" class="single-featured-image">
+	<span class="has-bugs post-thumbnail">
+					<div class="bug-container">
+				<picture class="featured-picture">
+											<source media="(min-width: 768px)" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=1150 2x">
+					
+											<source srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=1150 2x">
+						<img alt="SlackChat_0413-4&#215;3" src="https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=575" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/SlackChat_0413-4x3-1.png?w=1150 2x" class="" sizes="(max-width: 768px) 100vw, (max-width: 1080px) 66vw, 684px" />
+									</picture>
+
+				
+			</div>
+
+		
+		
+	</span><!-- .has-bugs -->
+
+	
+		
+</figure><!-- .single-featured-image -->
+						
+						<div class="entry-content single-post-content">
+							<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p data-paragraph="main">Welcome to FiveThirtyEight&rsquo;s <a href="https://fivethirtyeight.com/tag/slack-chat/" target="_blank" rel="noopener">politics chat</a>. The transcript below has been lightly edited.</p>
+
+
+
+<div class="ornamental-rule"><hr><span></span></div>
+
+
+
+
+<p data-paragraph="main"><strong>sarah </strong>(<a href="https://fivethirtyeight.com/contributors/sarah-frostenson/" target="_blank" rel="noopener">Sarah Frostenson</a>, politics editor): With unified control of the White House and Congress, Democrats are pushing a number of sweeping legislative priorities, <a href="https://www.npr.org/2021/03/03/972568115/house-approves-major-election-and-campaign-finance-reform-bill" target="_blank" rel="noopener">from an expansive voting-reform bill</a> to <a href="https://fivethirtyeight.com/features/democrats-are-split-over-how-much-the-party-and-american-democracy-itself-are-in-danger/" target="_blank" rel="noopener">weakening the filibuster</a> to now possibly adding (or at least studying the possibility of adding) <a href="https://www.nytimes.com/2021/04/09/us/politics/biden-supreme-court-packing.html?smtyp=cur&amp;smid=tw-nytimes" target="_blank" rel="noopener">more justices to the Supreme Court</a>.</p>
+
+
+<div class="ornamental-rule"><hr><span></span></div>
+<h3 class="video-title">What it means when Democrats talk about packing the Supreme Court</h3><div class="video-placeholder videoplayer abc"><iframe class="abc-player" src="https://fivethirtyeight.abcnews.go.com/video/embed/73374749?section=politics" width="100%" height="100%" allow="fullscreen" scrolling="no"></iframe></div><div class="video-footer"><div class="video-footer-links"><a href="/videos/">All Videos</a><a target="_blank" href="https://www.youtube.com/FiveThirtyEight">YouTube</a></div><hr></div>
+
+
+<div id="ad-incontentTeads" class="ad-incontentteads" data-defer="none"></div><p data-paragraph="main">This raises a number of questions about the Democrats&rsquo; ambitious agenda, including:</p>
+
+
+
+<ol><li>Is it good for democracy?&nbsp;</li><li>Is it good for Democrats?</li><li>Does it stand any chance of happening?</li></ol><p data-paragraph="main">Let&rsquo;s start with the commission Biden has created to study adding seats to the Supreme Court or setting term limits for justices. Is that good for democracy? </p>
+
+
+<div class="promo">
+	<p class="image">
+		<a href="https://fivethirtyeight.com/features/why-the-supreme-courts-reputation-is-at-stake/?cid=_inlinerelated"><img class="pullout" sizes="(min-width: 440px) 153px, 100vw" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=153&amp;quality=100&amp;strip=all 153w, https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=306&amp;quality=100&amp;strip=all 306w, https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=405&amp;quality=100&amp;strip=all 405w, https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=810&amp;quality=100&amp;strip=all 810w" alt="The Supreme Court building shot at an angle with a blue sky behind it. There&rsquo;s a single person on the stairs." width="153" height="115" data-sizes="(min-width: 440px) 153px, 100vw" data-srcset="https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=153&amp;quality=100&amp;strip=all 153w, https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=306&amp;quality=100&amp;strip=all 306w, https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=405&amp;quality=100&amp;strip=all 405w, https://fivethirtyeight.com/wp-content/uploads/2020/10/200923_SupremeCourt_4x3.jpg?w=810&amp;quality=100&amp;strip=all 810w"></a>
+	</p>
+	<p class="text">
+				<strong>related:</strong>
+				Why The Supreme Court&rsquo;s Reputation Is At Stake <a href="https://fivethirtyeight.com/features/why-the-supreme-courts-reputation-is-at-stake/?cid=_inlinerelated">Read more. &raquo;</a>
+	</p>
+</div>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman</strong> (<a href="https://fivethirtyeight.com/contributors/lee-drutman/" target="_blank" rel="noopener">Lee Drutman</a>, senior fellow at New America and FiveThirtyEight contributor): The Supreme Court <a href="https://fivethirtyeight.com/features/is-the-supreme-court-facing-a-legitimacy-crisis/%5D" target="_blank" rel="noopener">has a growing legitimacy problem</a>, which it&rsquo;s had for a few years now. Trust in the court <a href="https://fivethirtyeight.com/features/why-the-supreme-courts-reputation-is-at-stake/" target="_blank" rel="noopener">has been waning</a>, too. The easiest solution is for the court to stop being the arbiter of thorny democracy and culture-war issues, but to do that, you have to fix the deeper problems of hyper-partisanship.</p>
+
+
+
+<p data-paragraph="main">At the very least, the court should not be a deeply anti-majoritarian institution. (There is a <a href="https://fivethirtyeight.com/features/how-a-conservative-6-3-majority-would-reshape-the-supreme-court/" target="_blank" rel="noopener">6-3 conservative majority</a> on the court, even though Republicans have only won the popular vote for the president once in the last eight elections and have <a href="https://fivethirtyeight.com/features/the-senate-has-always-favored-smaller-states-it-just-didnt-help-republicans-until-now/" target="_blank" rel="noopener">represented a majority of Americans in the Senate just once in the last 40 years</a>.)</p>
+
+
+
+<p data-paragraph="main">Some alternative arrangement of the court, then, would be better for the health of our democracy. Term limits make a lot of sense, but they&rsquo;re not going to do a ton on their own, especially in the near term. That said, I don&rsquo;t see &ldquo;packing&rdquo; as a productive solution. It only further delegitimizes the court.</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich </strong>(<a href="https://fivethirtyeight.com/contributors/nathaniel-rakich/" target="_blank" rel="noopener">Nathaniel Rakich</a>, elections analyst):<strong> </strong>I&rsquo;m not sure I agree, Lee, that the court shouldn&rsquo;t be counter-majoritarian. I&rsquo;ve been working with FiveThirtyEight&rsquo;s <a href="https://fivethirtyeight.com/contributors/laura-bronner/" target="_blank" rel="noopener">Laura Bronner</a> on an article about the inherent biases in our political system, and one of the things I&rsquo;ve learned is that the founders specifically tried to insulate several institutions, including the Supreme Court, from public opinion by making them counter-majoritarian, or (to use a less fancy term) minority-protecting. So the problem isn&rsquo;t necessarily that Republicans control the Supreme Court despite the results of the last election; that&rsquo;s a feature, not a bug. Rather, the problem is that Republicans have an unfair electoral (or appointed) advantage in pretty much <em>every</em> institution in our government right now.</p>
+
+
+
+<div id="ad-incontentTeads2" class="ad-incontentteads2" data-defer="none"></div><p data-paragraph="main">While I see the argument that court packing would help to alleviate this balance somewhat, I ultimately think it&rsquo;s bad for democracy. Adding more justices to the Supreme Court would be a violation of democratic norms, which creates <a href="https://fivethirtyeight.com/features/how-much-danger-is-american-democracy-in/" target="_blank" rel="noopener">a slippery slope to democratic backsliding</a> (sorry for the mixed metaphors!).</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>I don&rsquo;t think the founders imagined the very active role the courts have come to play in our democracy. I agree, though, that the escalating justice arms race is not a great way to resolve the current crisis.</p>
+
+
+
+<p data-paragraph="main">The proposal I find most compelling is one put forth by law professors Daniel Epps and Ganesh Sitaraman. The system, which would <a href="https://www.vox.com/the-big-idea/2018/9/6/17827786/kavanaugh-vote-supreme-court-packing" target="_blank" rel="noopener">mirror how the court of appeals currently works</a>, would comprise a panel of nine justices, randomly selected from a full pool of associate judges, and then rotated out with another set of judges. </p>
+
+
+
+<p data-paragraph="main">I like this because it adds an element of uncertainty. It also means advocacy litigation and case selection would be more likely to proceed on the merits and not on the expectation of what would appeal to particular judges, who now have way too much power.</p>
+
+
+
+<p data-paragraph="main"><strong>perry </strong>(<a href="https://fivethirtyeight.com/contributors/perry-bacon-jr/" target="_blank" rel="noopener">Perry Bacon Jr.</a>, senior writer):<strong> </strong>I am generally wary of the idea that a political party should change the makeup of courts simply because it does not like their rulings. But if the Republican Party is going to make it <a href="https://fivethirtyeight.com/features/why-georgias-new-voting-law-is-such-a-big-deal/" target="_blank" rel="noopener">harder for non-Republicans to vote</a> &mdash; the most fundamental right in a democracy &mdash; and the Supreme Court is made up of Republican-appointed justices <a href="https://www.vox.com/21211880/supreme-court-chief-justice-john-roberts-voting-rights-act-election-2020" target="_blank" rel="noopener">who won&rsquo;t address voting laws</a> because they see themselves as on &ldquo;Team Republican,&rdquo; that&rsquo;s a big problem and must be addressed.</p>
+
+
+
+<p data-paragraph="main">We should emphasize &mdash; Biden&rsquo;s commission is not just about adding justices. It is looking at court reform as a whole. And judicial reforms that address, &ldquo;How do we get the courts acting in pro-democracy ways?&rdquo; are important.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>And even though the Supreme Court would never admit this, <a href="https://fivethirtyeight.com/features/the-supreme-courts-big-rulings-were-surprisingly-mainstream-this-year/" target="_blank" rel="noopener">it isn&rsquo;t immune to public opinion</a> &mdash; as FiveThirtyEight&rsquo;s Amelia Thomson-DeVeaux wrote last year. Many law professors told us that all the talk of <a href="https://www.vox.com/2020/1/31/21115114/court-packing-supreme-court-tom-steyer-mitch-mcconnell" target="_blank" rel="noopener">court packing</a> and <a href="https://www.gq.com/story/supreme-court-term-limits" target="_blank" rel="noopener">term limits for judges</a> may have even encouraged the justices to not deviate too much from the mainstream in their decisions. That way, they could maintain their reputation as nonpartisan actors and perhaps secure some wiggle room for unpopular decisions in the future.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>The justices are certainly concerned with the legitimacy of the court, but if we&rsquo;re in a moment in which the rules are different, the stakes feel higher, and the court is losing legitimacy &hellip; the conservative justices could decide that they are on the right side, legitimacy be damned.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>OK, so is the idea to reform the courts by adding more justices good for democracy? I&rsquo;m sensing a no, but some agreement that term limits would be good?</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>I&rsquo;d say term limits: good for democracy. Court packing: not so good. The rotating associate justices solution: very good.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>So what about the politics of actually adding more seats to the court? Is that good for Democrats? Nathaniel started to get at this earlier, but it seems as if it would be good in the short term, but inevitably bad in the long term, right?</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>Given how Republicans <a href="https://fivethirtyeight.com/features/trump-made-the-federal-courts-whiter-and-more-conservative-and-that-will-be-tough-for-biden-to-reverse/" target="_blank" rel="noopener">currently dominate the federal judiciary</a>, court packing would undeniably help Democrats in the short term by making the court likelier to side with them and their policies. But in the long term, if Republicans retaliate by doing some court packing of their own, maybe not so much.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>There&rsquo;d be a tremendous backlash to expanding the Supreme Court that would hurt Democrats in the short term. But in the long term, who knows?</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>Why do you express more long-term doubt, Lee?</p>
+
+
+<div class="ornamental-rule"><hr><span></span></div>
+<h3 class="video-title">How bipartisan is Democrats&rsquo; infrastructure plan? | FiveThirtyEight Politics Podcast</h3><div class="video-placeholder videoplayer abc"><iframe class="abc-player" src="https://fivethirtyeight.abcnews.go.com/video/embed/76891337?section=politics" width="100%" height="100%" allow="fullscreen" scrolling="no"></iframe></div><div class="video-footer"><div class="video-footer-links"><a href="/videos/">All Videos</a><a target="_blank" href="https://www.youtube.com/FiveThirtyEight">YouTube</a></div><hr></div>
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Well, things are always more unpredictable in the long term. There&rsquo;s the possibility of the arms race escalation that Nathaniel raised. But there&rsquo;s also the possibility that we get some kind of political realignment or other change in our democracy that reshapes the current partisan conflict.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>So I initially asked about the politics of expanding the number of justices and whether that was good for Democrats. Let&rsquo;s say that Democrats focused more on term limits, which we said was better for democracy. Would that be better politically for them?&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Yes, it&rsquo;s less controversial, and there are <a href="https://archive.sltrib.com/story.php?ref=/sltrib/world/52493936-68/perry-judges-court-federal.html.csp" target="_blank" rel="noopener">plenty</a> of <a href="https://www.latimes.com/nation/politics/politicsnow/la-pn-huckabee-term-limits-supreme-court-20150328-story.html" target="_blank" rel="noopener">conservatives</a> on <a href="https://www.nationalreview.com/2019/11/supreme-court-term-limits-have-bipartisan-support/" target="_blank" rel="noopener">the record</a> <a href="https://www.facebook.com/marklevinshow/posts/10157878557603832" target="_blank" rel="noopener">supporting it</a> over <a href="https://www.nytimes.com/2005/07/30/politics/politicsspecial1/white-house-memos-offer-opinions-on-supreme-court.html?_r=0" target="_blank" rel="noopener">many years</a>.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>Now the kicker &mdash; which I&rsquo;m guessing might have a familiar refrain by the end of this chat &mdash; what&rsquo;s the likelihood that the makeup of the Supreme Court is altered, either via term limits or more justices?&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>There is <a href="https://fivethirtyeight.com/features/why-a-fringe-idea-about-the-supreme-court-is-taking-over-the-left/" target="_blank" rel="noopener">a real court-packing community and movement</a>. But almost none of the people in that sphere <a href="https://slate.com/news-and-politics/2021/04/joe-biden-supreme-court-reform-commission.html" target="_blank" rel="noopener">are on this commission</a>. So this group is likely to push fairly incremental ideas &mdash; if it pushes anything at all. In other words, court reform is dead, at least for now.&nbsp;</p>
+
+
+
+<p data-paragraph="main">Consider, too, that Sen. Joe Manchin <a href="https://www.washingtonpost.com/opinions/joe-manchin-filibuster-vote/2021/04/07/cdbd53c6-97da-11eb-a6d0-13d207aadb78_story.html" target="_blank" rel="noopener">won&rsquo;t support getting rid of the filibuster</a> for fairly non-controversial things, <a href="https://newrepublic.com/article/161605/manchin-gun-background-checks-filibuster" target="_blank" rel="noopener">like background checks on gun purchases</a>. So he definitely wouldn&rsquo;t support changing the filibuster to add justices to the Supreme Court, and my guess is he would oppose term limits, too.&nbsp;</p>
+
+
+
+<p data-paragraph="main">Also, Biden has <a href="https://www.nytimes.com/2020/10/22/us/politics/biden-supreme-court-packing.html" target="_blank" rel="noopener">never really been into court reform in the first place</a>, so that&rsquo;s another reason it&rsquo;s probably not going anywhere.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>It&rsquo;s possible that the court renders a series of decisions that are so politically unpopular on the left that Biden gets pushed into doing something. But this seems unlikely. The most likely scenario is that the court tries to avoid super-controversial decisions that would undermine its legitimacy, and conservatives on the bench make more incremental rulings.&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>The fact that the commission isn&rsquo;t expected to issue a set of recommendations surprised me. What&rsquo;s the point of the study, then?</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>The point is to see if there&rsquo;s something that esteemed experts across the political spectrum could agree to act on. Maybe there is, but it&rsquo;s more likely there&rsquo;s not.</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>Biden is following through on a <a href="https://www.nytimes.com/2020/10/22/us/politics/biden-supreme-court-packing.html" target="_blank" rel="noopener">campaign promise to create this commission</a>. The issue is that when he made this promise, it looked like <a href="https://projects.fivethirtyeight.com/2020-election-forecast/" target="_blank" rel="noopener">he might win 400 electoral votes</a> and that Democrats <a href="https://projects.fivethirtyeight.com/2020-election-forecast/house/" target="_blank" rel="noopener">would have 240 House seats</a> and <a href="https://projects.fivethirtyeight.com/2020-election-forecast/senate/" target="_blank" rel="noopener">53 Senate seats</a>. But Democrats didn&rsquo;t have that kind of resounding victory. If Democrats had won by large margins and it seemed like the Supreme Court was the only barrier to the country moving leftward, I think court reform has more momentum.</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>I told <a href="https://fivethirtyeight.com/contributors/amelia-thomson-deveaux/" target="_blank" rel="noopener">Amelia Thomson-DeVeaux</a>, FiveThirtyEight&rsquo;s legal reporter who is currently out on maternity leave (hi Amelia!), that I was doing this chat, and she also pointed out that the court-packing debate largely ignores the fact that lower-level courts are also heavily skewed toward Republicans now.&nbsp;</p>
+
+
+
+<p data-paragraph="main">So I wonder if expanding lower-level courts might be a more realistic reform, in that it would create less backlash.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>I agree that we focus too heavily on the Supreme Court because it is the most visible court. But lower courts are really important, too. That&rsquo;s something Senate Minority Leader Mitch McConnell understood well when Donald Trump was president.</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>Adding more district/court judgeships seems like a more plausible reform that the commission might propose, but it will also not likely become law.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>OK, let&rsquo;s talk about the filibuster next. As Perry hinted at, it seems especially unlikely that Democrats will reform this given Manchin&rsquo;s position on it (he recently <a href="https://www.washingtonpost.com/opinions/joe-manchin-filibuster-vote/2021/04/07/cdbd53c6-97da-11eb-a6d0-13d207aadb78_story.html" target="_blank" rel="noopener">wrote an op-ed</a> saying he won&rsquo;t do anything to change the filibuster). But that hasn&rsquo;t stopped Democrats from <a href="https://nymag.com/intelligencer/2021/01/manchin-sinema-schumer-mcconnell-filibuster.html" target="_blank" rel="noopener">talking about wanting to get rid of it</a> or <a href="https://www.rollcall.com/2021/03/22/democrats-pushing-to-weaken-the-filibuster-say-it-enables-racism/" target="_blank" rel="noopener">seriously weaken it</a>, in particular as it pertains to <a href="https://www.nytimes.com/2021/03/24/us/politics/filibuster-democrats-voting-congress.html" target="_blank" rel="noopener">passing their sweeping voting-reform legislation</a>. </p>
+
+
+<div class="promo">
+	<p class="image">
+		<a href="https://fivethirtyeight.com/features/democratic-values-are-still-under-attack-even-without-trump-in-the-white-house/?cid=_inlinerelated"><img class="pullout" sizes="(min-width: 440px) 153px, 100vw" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=153&amp;quality=100&amp;strip=all 153w, https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=306&amp;quality=100&amp;strip=all 306w, https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=405&amp;quality=100&amp;strip=all 405w, https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=810&amp;quality=100&amp;strip=all 810w" alt="People walking in front of the Capitol Building with a giant sign that says &ldquo;Black Votes Matter.&rdquo;" width="153" height="115" data-sizes="(min-width: 440px) 153px, 100vw" data-srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=153&amp;quality=100&amp;strip=all 153w, https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=306&amp;quality=100&amp;strip=all 306w, https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=405&amp;quality=100&amp;strip=all 405w, https://fivethirtyeight.com/wp-content/uploads/2021/04/RTX9XSRQ-4x3-1.jpg?w=810&amp;quality=100&amp;strip=all 810w"></a>
+	</p>
+	<p class="text">
+				<strong>related:</strong>
+				Democratic Values Are Still Under Attack &mdash; Even Without Trump In The White House <a href="https://fivethirtyeight.com/features/democratic-values-are-still-under-attack-even-without-trump-in-the-white-house/?cid=_inlinerelated">Read more. &raquo;</a>
+	</p>
+</div>
+
+
+
+<p data-paragraph="main">There is a debate, though, on whether the filibuster is good for democracy. Proponents, like Manchin, argue it&rsquo;s important for protecting the rights of the party not in power. But opponents of the filibuster can easily point to its <a href="https://abcnews.go.com/Politics/wireStory/senate-filibusters-racist-past-fuels-arguments-end-76990021" target="_blank" rel="noopener">racist past</a>, including how it&rsquo;s been used to thwart civil-rights legislation. So, where do we land? Is the filibuster, on net, good for democracy? Or bad?&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>That&rsquo;s an easy one. As currently used, the filibuster is bad for the health of democracy. I&rsquo;d go as far as to say it&rsquo;s <em>very</em> bad, as it creates an opportunity for the opposing party to shut everything down.</p>
+
+
+
+<p data-paragraph="main">There&rsquo;s no democratic principle that requires more than <a href="https://www.economist.com/briefing/2021/03/13/the-filibuster-is-an-oddity-that-harms-american-democracy" target="_blank" rel="noopener">a simple majority to pass ordinary legislation</a>, either.&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>I tend to think that the majority party should have the chance to pass its agenda and let the voters determine if they like that agenda, as opposed to endless gridlock.&nbsp;</p>
+
+
+
+<p data-paragraph="main">The filibuster didn&rsquo;t save the Affordable Care Act in 2017 &mdash; the <a href="https://fivethirtyeight.com/features/the-gop-health-care-bill-is-unpopular-even-in-republican-districts/" target="_blank" rel="noopener">public opposed those changes</a>, and so Republican senators <a href="https://www.nbcnews.com/politics/congress/senate-gop-effort-repeal-obamacare-fails-n787311" target="_blank" rel="noopener">weren&rsquo;t willing to repeal Obamacare</a>, even though they had the option of using budget reconciliation to do so. Both parties just create <a href="https://www.npr.org/2019/04/03/709489797/senate-rewrites-rules-to-speed-confirmations-for-some-trump-nominees" target="_blank" rel="noopener">workarounds on the filibuster</a> whenever they <a href="https://www.politico.com/story/2013/11/harry-reid-nuclear-option-100199" target="_blank" rel="noopener">really want something done.</a>&nbsp;</p>
+
+
+
+<p data-paragraph="main">It&rsquo;s safe to assume, then, that Manchin doesn&rsquo;t really care that much about the stuff that Democrats can only pass by gutting the filibuster, but he would feel differently about the filibuster if it were for stuff he cared about. Sen. Susan Collins, on the other hand, is probably fine with the filibuster because she probably doesn&rsquo;t support the more right-wing bills that the GOP would push if there were no filibuster.&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>Yeah, while I think it&rsquo;s a good instinct to protect the minority party, the filibuster clearly goes too far. Sixty votes is a near-impossible threshold to reach in this era of polarization, which means policy just doesn&rsquo;t get made, and that can lead to discontent that ultimately destabilizes democracy.</p>
+
+
+
+<p data-paragraph="main">I think Perry<strong> </strong>raises a good point that the majority party is actually quite proactive about reining itself in, as you see with the hesitance of Manchin now, or Collins back when Republicans had power.</p>
+
+
+
+<p data-paragraph="main">They are afraid of public opinion &mdash; probably more than they need to be, as <a href="https://www.businessinsider.com/8-democrats-who-voted-to-kill-the-minimum-wage-increase-2021-3" target="_blank" rel="noopener">some Democrats&rsquo; recent votes</a> against the <a href="https://fivethirtyeight.com/features/what-americans-think-about-the-minimum-wage-and-their-governors/" target="_blank" rel="noopener">popular $15 minimum wage</a> show. </p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>What about the argument that if the threshold of votes needed was lowered to a simple majority, that you&rsquo;d end up in this yo-yo situation, with each party pushing through its agenda when in power?&nbsp;</p>
+
+
+
+<p data-paragraph="main">Wouldn&rsquo;t that create a lot of 180s on policy? Or, if I&rsquo;m understanding you all correctly, you&rsquo;re saying that argument is flawed to start with because there are already checks in place to prevent this (namely, public opinion and parties not wanting to do unpopular things).</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>That, Sarah, but also, aren&rsquo;t 180s on policy fine if that&rsquo;s what the voters want? Maybe they elected an all-Democratic government but that government enacted a very far-left policy, and the voters elect a Republican government in the next election specifically to repeal that policy.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>And right now, the filibuster <a href="https://fivethirtyeight.com/features/why-revoking-trumps-executive-orders-isnt-enough-to-undo-their-effects/" target="_blank" rel="noopener">pushes policymaking to the executive branch</a>, which creates far more 180s in policy.</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich:</strong> That&rsquo;s a great point, too, Lee.</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>If the voters elect a different party to control the government, we should have shifts in policy. The parties support radically different things. It was weird in 2017, when a party that had said Obamacare was so terrible for almost a decade <a href="https://www.theatlantic.com/politics/archive/2021/03/why-trump-republicans-failed-repeal-obamacare/618337/" target="_blank" rel="noopener">didn&rsquo;t really seem prepared to repeal it</a> &mdash; almost as if the repeal push wasn&rsquo;t that serious, and they expected to be able to blame it all on the rules.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>That&rsquo;s an important point, Perry, about Republicans not having a plan. And the filibuster gives them an excuse not to have a plan, because they can say they don&rsquo;t have 60 votes.</p>
+
+
+
+<p data-paragraph="main">A 51-vote threshold, on the other hand, forces parties to actually have plans they intend to follow through on. This seems like a good thing to me.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>On that note, then &hellip; filibuster reform would be good for Democrats, yes? (Good for Republicans, later down the line, too?)</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Well, filibuster reform doesn&rsquo;t happen in a vacuum. If Democrats get rid of the filibuster, it means they&rsquo;ll be passing their big voting-reform bill and making Washington, D.C., a state.</p>
+
+
+
+<p data-paragraph="main">So, yes, that would be very good for Democrats.</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>Because of the <a href="https://fivethirtyeight.com/features/the-senate-has-always-favored-smaller-states-it-just-didnt-help-republicans-until-now/" target="_blank" rel="noopener">rural bias of the Senate</a>, it&rsquo;s virtually unimaginable that Democrats will be able to win 60 seats in the foreseeable future, so enacting the full Democratic agenda requires them getting rid of the filibuster.</p>
+
+
+
+<p data-paragraph="main">Republicans are in a better spot, though. They <em>could</em> someday <a href="https://fivethirtyeight.com/features/democrats-horrible-2018-senate-map-couldnt-have-come-at-a-better-time/" target="_blank" rel="noopener">win 60 Senate seats</a>, in which case the filibuster wouldn&rsquo;t matter as much to them. But abolishing the filibuster would also help them much of the time.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Republicans would have to rethink their entire electoral and policy strategy (<a href="https://fivethirtyeight.com/features/why-republicans-dont-fear-an-electoral-backlash-for-opposing-really-popular-parts-of-bidens-agenda/" target="_blank" rel="noopener">they couldn&rsquo;t just say no</a> anymore). It would also bring more divisions within the party to the surface.</p>
+
+
+
+<p data-paragraph="main">Ultimately, I think this would be very good for democracy. And probably good for Republicans in the longer run, even if they don&rsquo;t realize it now.</p>
+
+
+<div class="ornamental-rule"><hr><span></span></div>
+<h3 class="video-title">Confidence Interval: Will Andrew Yang be the next Mayor of New York City?</h3><div class="video-placeholder videoplayer abc"><iframe class="abc-player" src="https://fivethirtyeight.abcnews.go.com/video/embed/77033668?section=politics" width="100%" height="100%" allow="fullscreen" scrolling="no"></iframe></div><div class="video-footer"><div class="video-footer-links"><a href="/videos/">All Videos</a><a target="_blank" href="https://www.youtube.com/FiveThirtyEight">YouTube</a></div><hr></div>
+
+
+<p data-paragraph="main"><strong>perry: </strong>So in terms of passing their preferred policies, filibuster reform would be good for Democrats. But I think it would be bad for Republicans, because I don&rsquo;t think Republicans have as many policies that they want to pass.&nbsp;</p>
+
+
+
+<p data-paragraph="main">As the pro-government party, the Democrats want to pass more bills. And there is a theory that the Democrats passing a bunch of popular policies on economic issues, like raising the minimum wage, <a href="https://www.nytimes.com/2021/01/21/opinion/biden-inauguration-democrats.html" target="_blank" rel="noopener">will help them electorally</a>. But I am not so sure that voters vote in such pragmatic, rational terms. I think there is a case where Democrats pass a bunch of stuff, voters like some of those ideas, but think it was too much overall, and back the GOP in the midterms as a check on the Democrats.&nbsp;</p>
+
+
+
+<p data-paragraph="main">So while getting rid of the filibuster allows Democrats to pass their preferred policies, I am not sure getting those policies passed is all that useful electorally. Their voting-reform bills are somewhat useful in terms of making it harder for Republicans to shape the electoral rules. But those two bills are not necessarily going to prevent a midterm loss for the Democrats.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>Does filibuster reform stand any chance of happening? Say, Manchin relents on his stance. Won&rsquo;t Democrats &mdash; given what&rsquo;s at stake for them politically &mdash; do everything they can to push for gutting the filibuster?</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>That&rsquo;s a big if, Sarah. It really doesn&rsquo;t sound like Manchin will budge. But even if he does, other moderate Democrats, like Sen. Kyrsten Sinema, might still stand in the way.&nbsp;</p>
+
+
+
+<p data-paragraph="main">That said, some kind of reform short of abolishment &mdash; like bringing back the <a href="https://www.nytimes.com/2021/03/19/us/politics/talking-filibuster-questions-answers.html" target="_blank" rel="noopener">talking filibuster</a> &mdash; seems possible.</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>I have been surprised by how strong Manchin&rsquo;s stance is and how little the party has really fought him. It makes me think that there are three to five Democrats who agree with him in private. I think the filibuster debate might be over &mdash; with no real changes made.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Manchin does seem pretty dug in and seems to view his legacy as bringing back some kind of lost bipartisanship. I&rsquo;m not sure when he&rsquo;ll realize that&rsquo;s not going to happen.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>If we think filibuster reform won&rsquo;t gain more traction in part because of a number of resistant Democrats, do we have a good explanation as to why? Is it really just because those politicians equate the filibuster with bipartisanship?</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>I think there is still some disagreement on these issues in a policy sense. Manchin is a centrist &mdash; so the filibuster allows him to block the left&rsquo;s goals. I don&rsquo;t think Manchin really wants a more Democratic-leaning Supreme Court. </p>
+
+
+<div class="promo">
+	<p class="image">
+		<a href="https://fivethirtyeight.com/features/how-views-on-black-lives-matter-have-changed-and-why-that-makes-police-reform-so-hard/?cid=_inlinerelated"><img class="pullout" sizes="(min-width: 440px) 153px, 100vw" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=153&amp;quality=100&amp;strip=all 153w, https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=306&amp;quality=100&amp;strip=all 306w, https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=405&amp;quality=100&amp;strip=all 405w, https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=810&amp;quality=100&amp;strip=all 810w" alt="A person carries a Black Lives Matter flag outside the Brooklyn Center police headquarters in Brooklyn Center, Minnesota. She&rsquo;s dressed in an orange poncho and wearing a mask and carrying a Black Lives Matter flag. On the other side of the street you can see multiple uniformed police officers standing outside the precinct." width="153" height="115" data-sizes="(min-width: 440px) 153px, 100vw" data-srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=153&amp;quality=100&amp;strip=all 153w, https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=306&amp;quality=100&amp;strip=all 306w, https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=405&amp;quality=100&amp;strip=all 405w, https://fivethirtyeight.com/wp-content/uploads/2021/04/GettyImages-1232269787-4x3-1.jpg?w=810&amp;quality=100&amp;strip=all 810w"></a>
+	</p>
+	<p class="text">
+				<strong>Related:</strong>
+				How Views On Black Lives Matter Have Changed &mdash; And Why That Makes Police Reform So Hard <a href="https://fivethirtyeight.com/features/how-views-on-black-lives-matter-have-changed-and-why-that-makes-police-reform-so-hard/?cid=_inlinerelated">Read more. &raquo;</a>
+	</p>
+</div>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>I think it&rsquo;s a small-c conservative instinct. Eliminating the filibuster is, after all, a major change in how the Senate does business, and it&rsquo;s basically an acknowledgment that the Senate will work differently going forward. And if you&rsquo;re a more moderate-to-conservative Democrat, you will be under a lot more pressure to get on board with the full Democratic agenda.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>Let&rsquo;s talk about the Democrats&rsquo; massive voting-reform bill that has already been passed in the House, although it&rsquo;s unclear if/when it will be taken up in the Senate. Is it good for democracy?</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Also an easy one. Yes, it sets up a bunch of baseline rules for <a href="https://www.nytimes.com/2021/03/30/us/politics/voting-rights-law.html" target="_blank" rel="noopener">making voting more fair</a>. That means it would be more difficult for state lawmakers to restrict voting, as we&rsquo;re currently <a href="https://fivethirtyeight.com/features/the-states-where-efforts-to-restrict-voting-are-escalating/" target="_blank" rel="noopener">seeing play out across the U.S.</a> It would also set rules for what constitutes illegal partisan gerrymandering. There would also be limits on &ldquo;dark money&rdquo; or donations made in secret by big political action committees.</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>Agreed, Lee. All these things make the democratic process more transparent and easier for people to participate in. (The <a href="https://www.brennancenter.org/our-work/policy-solutions/annotated-guide-people-act-2021" target="_blank" rel="noopener">House&rsquo;s bill</a> would implement at least 15 days of early voting for federal elections, ban states from restricting access to absentee voting in federal elections and lower the barriers to registering to vote, such as by allowing people to register on Election Day in federal elections.)</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>And is this good for Democrats politically? Or is that a little harder to answer, as making voting easier doesn&rsquo;t necessarily hold an advantage for either party?</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>I don&rsquo;t think it&rsquo;s harder to answer &mdash; the bill is good for Democrats &mdash; but I think we need to be nuanced about it. A lot of the most-discussed provisions of H.R. 1 probably wouldn&rsquo;t have a partisan effect (the expansion of <a href="https://fivethirtyeight.com/features/there-is-no-evidence-that-voting-by-mail-gives-one-party-an-advantage/" target="_blank" rel="noopener">no-excuse absentee voting</a> and <a href="https://fivethirtyeight.com/features/early-voting-laws-probably-dont-boost-turnout/" target="_blank" rel="noopener">early voting</a>, for instance). But the attempts to make redistricting fairer would be a major boon to Democrats, given that Republicans are primed to <a href="https://fivethirtyeight.com/features/republicans-won-almost-every-election-where-redistricting-was-at-stake/" target="_blank" rel="noopener">draw more than 2.5 times as many congressional districts</a> as Democrats this decade (188 to 73).&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>Nathaniel&rsquo;s right &mdash; the voting provisions don&rsquo;t have a clear partisan tilt. The 2020 presidential election was a <em>very</em> high turnout election. It&rsquo;s unclear if that will be true moving forward.</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>It&rsquo;s good for Democrats in that they won&rsquo;t have to spend as much time navigating voting laws. Think of the time people in Georgia will have to spend dealing with changes to their voting laws &mdash; set rules would help Democrats in states where they are more reliant on get-out-the-vote operations, as is the case in Georgia.</p>
+
+
+
+<p data-paragraph="main"><strong>sarah: </strong>Do we think Democrats will be able to pass their voting-reform package? </p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>I can see some version of a trimmed-down voting-rights bill being given some kind of green light by Manchin.</p>
+
+
+
+<p data-paragraph="main"><strong>nrakich: </strong>I think it&rsquo;s unlikely to pass, but I think it has a better chance than the two other things we talked about. Democrats seem <em>really</em> invested in passing voting-reform legislation.</p>
+
+
+
+<p data-paragraph="main">So I could see them pulling some creative legislative maneuvers, like creating a voting-rights exemption to the filibuster, to make it happen.&nbsp;</p>
+
+
+
+<p data-paragraph="main"><strong>perry: </strong>It is the most plausible thing that we have discussed here. I could see Manchin and Sinema allowing a small carveout for some kind of voting-rights bill.</p>
+
+
+
+<p data-paragraph="main"><strong>lee.drutman: </strong>I agree that there is a real push at all levels of the Democratic Party to pass this. As Democrats begin to assess the hard realities of the 2022 midterms, and Republican state-level efforts to restrict the vote and redraw political maps build, the pressure on Democrats to pass something will mount.&nbsp;</p>
+
+
+
+<p data-paragraph="main">There&rsquo;s a real question of whether it will be too late &mdash; or how it will work &mdash; as many of the changes, particularly as they pertain to redistricting, need time to go into effect before the 2022 elections. Democrats are up against the clock.</p>
+
+
+<div class="ornamental-rule"><hr><span></span></div>
+<h3 class="video-title">Elections to watch in 2021| FiveThirtyEight Politics Podcast</h3><div class="video-placeholder videoplayer abc"><iframe class="abc-player" src="https://fivethirtyeight.abcnews.go.com/video/embed/76825753?section=politics" width="100%" height="100%" allow="fullscreen" scrolling="no"></iframe></div><div class="video-footer"><div class="video-footer-links"><a href="/videos/">All Videos</a><a target="_blank" href="https://www.youtube.com/FiveThirtyEight">YouTube</a></div><hr></div>
+
+<div class="ornamental-rule"><hr><span></span></div>
+<h3 class="video-title">Police misconduct trials are rare. Instead, cities pay millions to settle claims</h3><div class="video-placeholder videoplayer abc"><iframe class="abc-player" src="https://fivethirtyeight.abcnews.go.com/video/embed/76793246?section=politics" width="100%" height="100%" allow="fullscreen" scrolling="no"></iframe></div><div class="video-footer"><div class="video-footer-links"><a href="/videos/">All Videos</a><a target="_blank" href="https://www.youtube.com/FiveThirtyEight">YouTube</a></div><hr></div><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"f6169b8cc4","applicationID":"100041457","transactionName":"bwcDZBYEW0ZVVhEMXVZNNEINSlxbUFAdS0JQEg==","queueTime":0,"applicationTime":308,"atts":"Q0AUEl4eSBkWVEdfSUUf","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body></html>
+						</div><!-- .entry-content -->
+					</article>
+				</div>
+				<div id="article-additional">
+					<div class="mini-bio">
+		
+<p>Sarah Frostenson is FiveThirtyEight&rsquo;s politics editor. <span class="mail"><a href="mailto:sarah.frostenson@abc.com"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/sfrostenson" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@sfrostenson</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div class="mini-bio">
+		
+<p>Perry Bacon Jr. is a senior writer for FiveThirtyEight. <span class="mail"><a href="mailto:perry.bacon@fivethirtyeight.com"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/perrybaconjr" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@perrybaconjr</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div class="mini-bio">
+		
+<p>Nathaniel Rakich is an elections analyst at FiveThirtyEight. <span class="mail"><a href="mailto:nathaniel.rakich@fivethirtyeight.com"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/baseballot" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@baseballot</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div class="mini-bio">
+		
+<p>Lee Drutman is a senior fellow in the Political Reform program at New America. He&rsquo;s the author of the book, &ldquo;Breaking the Two-Party Doom Loop: The Case for Multiparty Democracy in America.&rdquo; <span class="mail"><a href="mailto:drutman@newamerica.org"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/leedrutman" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@leedrutman</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div id="entry-comments" class="fte-expandable">
+	<h3 class="fte-expandable-title">Comments</h3>
+
+	<div class="entry-comments-content fte-expandable-content">
+		<div class="fb-comments" data-href="http://fivethirtyeight.com/?post_type=fte_features&#038;p=307679" data-numposts="5" data-colorscheme="light"
+														></div>
+	</div>
+	<!-- .entry-comments-content -->
+</div>
+<!-- .entry-comments -->
+<div id="taboola-307679" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/" data-mode="thumbnails-a" data-placement="Below Article Thumbnails"></div><div class="tags">
+	<p class="filed-under">Filed under</p>
+	<p class="tag-links"><a class="tag" href="https://fivethirtyeight.com/tag/joe-biden/">Joe Biden <span class="count">(526 posts)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/congress/">Congress <span class="count">(468)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/slack-chat/">Slack Chat <span class="count">(261)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/senate-democrats/">Senate Democrats <span class="count">(82)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/democratic-party/">Democratic Party <span class="count">(63)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/the-biden-administration/">The Biden Administration <span class="count">(42)</span></a>
+</p>
+</div>
+				</div>
+			</div>
+			<div class="single-feature__col">
+				<div id="secondary" class="single-col vertical-col blog-col">
+
+	<div class="sidebar-feature visually-hidden"><aside id="espn-taboola-3" class="widget espn-taboola-recommendation"><div id="taboola-307679-top-recommendation" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/" data-mode="organic-text-links-a" data-placement="Organic Right Rail Links"></div></aside><aside id="dtci-a9-ad-5" class="widget a9-sidebar-ad"><div id="ad-A9InContent-1" class="ad-a9incontent" data-defer="none"></div></aside>		<aside id="fivethirtyeight-newsletter-84" class="widget flexible newsletter-subscription">
+			<h2 class="widget-title">Newsletter</h2>
+			<div class="newsletter-subscribe weekly">
+	<div class="envelope"></div>
+
+	<div class="outer-wrapper">
+		<h4>Want more FiveThirtyEight? Get our weekly most popular stories newsletter.</h4>
+		<div class="subscribed hidden">
+	You are now subscribed!
+</div>
+
+<div class="newsletter-form-wrapper">
+	<div class="newsletter-form">
+		<div class="errors hidden"></div>
+		<div class="inputs">
+			<input type="hidden" name="nl" value="FiveThirtyEight_-_Top_Stories_N" data-newsletter="FiveThirtyEight Top Stories">
+			<input class="newsletter-input email-address" aria-label="Email Address" placeholder="Email address" type="email" name="email">
+			<button aria-label="Subscribe" class="subscribe-action button" type="submit" name="Sign me up">Sign me up</button>
+		</div>
+		<p class="all"><a href="https://fivethirtyeight.com/newsletters/">See all newsletters</a></p>
+		<p class="newsletter-agreement"></p>
+	</div>
+</div>
+	</div>
+</div>
+		</aside>
+		<aside id="dtci-sidaebar-ad-23" class="widget gpt-sidebar-ad"><div id="ad-InContent" class="ad-incontent" data-defer="none"></div></aside>	<aside class="widget fivethirtyeight-featured-video-widget">
+		<h2 class="widget-title">Featured video</h2>
+					<ul>
+										<li>
+							<article id="post-307679" class="widget-video">
+								<div class="widget-video__content">
+									<h3 class="widget-video__title">
+										<a href="https://fivethirtyeight.com/videos/why-serious-changes-to-policing-are-so-unlikely-to-happen/?cid=rrfeaturedvideo">
+											Why Serious Changes To Policing Are So Unlikely To Happen										</a>
+									</h3>
+								</div>
+								<div class="widget-video__poster">
+									<a href="https://fivethirtyeight.com/videos/why-serious-changes-to-policing-are-so-unlikely-to-happen/?cid=rrfeaturedvideo" class="post-thumbnail">
+																					<button class="orange-play-button thumbnail-play-button" aria-label="Play"></button>
+																				<img alt="210414_Pod_4x3" width="300" height="225" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/210414_Pod_4x3.jpg?w=300 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/210414_Pod_4x3.jpg?w=600 2x" class="" sizes="100px" />
+									</a>
+								</div>
+							</article>
+						</li>
+											<li>
+							<article id="post-307679" class="widget-video">
+								<div class="widget-video__content">
+									<h3 class="widget-video__title">
+										<a href="https://fivethirtyeight.com/videos/confidence-interval-will-andrew-yang-be-the-next-mayor-of-new-york-city/?cid=rrfeaturedvideo">
+											Confidence Interval: Will Andrew Yang Be The Next Mayor Of New York City?										</a>
+									</h3>
+								</div>
+								<div class="widget-video__poster">
+									<a href="https://fivethirtyeight.com/videos/confidence-interval-will-andrew-yang-be-the-next-mayor-of-new-york-city/?cid=rrfeaturedvideo" class="post-thumbnail">
+																					<button class="orange-play-button thumbnail-play-button" aria-label="Play"></button>
+																				<img alt="CI-YANG-standard" width="300" height="225" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/CI-YANG-standard.jpg?w=300 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/CI-YANG-standard.jpg?w=600 2x" class="" sizes="100px" />
+									</a>
+								</div>
+							</article>
+						</li>
+											<li>
+							<article id="post-307679" class="widget-video">
+								<div class="widget-video__content">
+									<h3 class="widget-video__title">
+										<a href="https://fivethirtyeight.com/videos/why-support-for-gun-control-hasnt-led-to-new-legislation/?cid=rrfeaturedvideo">
+											Why Support For Gun Control Hasn’t Led To New Legislation										</a>
+									</h3>
+								</div>
+								<div class="widget-video__poster">
+									<a href="https://fivethirtyeight.com/videos/why-support-for-gun-control-hasnt-led-to-new-legislation/?cid=rrfeaturedvideo" class="post-thumbnail">
+																					<button class="orange-play-button thumbnail-play-button" aria-label="Play"></button>
+																				<img alt="210412_Pod_4x3" width="300" height="225" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/210412_Pod_4x3.jpg?w=300 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/210412_Pod_4x3.jpg?w=600 2x" class="" sizes="100px" />
+									</a>
+								</div>
+							</article>
+						</li>
+											<li>
+							<article id="post-307679" class="widget-video">
+								<div class="widget-video__content">
+									<h3 class="widget-video__title">
+										<a href="https://fivethirtyeight.com/videos/latino-voters-arent-a-monolith-but-the-gop-made-gains-with-them-just-about-everywhere-in-2020/?cid=rrfeaturedvideo">
+											Latino Voters Aren’t A Monolith, But The GOP Made Gains With Them Just About Everywhere In 2020										</a>
+									</h3>
+								</div>
+								<div class="widget-video__poster">
+									<a href="https://fivethirtyeight.com/videos/latino-voters-arent-a-monolith-but-the-gop-made-gains-with-them-just-about-everywhere-in-2020/?cid=rrfeaturedvideo" class="post-thumbnail">
+																					<button class="orange-play-button thumbnail-play-button" aria-label="Play"></button>
+																				<img alt="210408_Pod_4x3" width="300" height="225" srcset="https://fivethirtyeight.com/wp-content/uploads/2021/04/210408_Pod_4x3.jpg?w=300 1x, https://fivethirtyeight.com/wp-content/uploads/2021/04/210408_Pod_4x3.jpg?w=600 2x" class="" sizes="100px" />
+									</a>
+								</div>
+							</article>
+						</li>
+								</ul>
+			</aside>
+		<!-- end widget -->
+		</div></div><!-- #secondary -->
+			</div>
+		</div>
+	</div><!-- .single -->
+
+	
+
+	</div><!-- #wrapper .site-wrapper -->
+	</div><!-- .site-main -->
+
+<footer id="colophon" class="site-footer">
+
+	<div class="site-wrapper footer-main-content">
+
+		<div class="footer-section-get-more">
+			Get more FiveThirtyEight		</div>
+
+		<div class="footer-section-primary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://cottonbureau.com/stores/fivethirtyeight#/shop" name="&amp;lpos=fivethirtyeightFooter&amp;lid=store">Store</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/newsletter/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=newsletter">Newsletter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://twitter.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=twitter">Twitter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://www.facebook.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=facebook">Facebook</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://data.fivethirtyeight.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=data">Data</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/features/fear-not-readers-we-have-rss-feeds/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=rss">RSS</a>
+				</li>
+			</ul>
+		</div><!-- .footer-primary-links -->
+
+		<div class="footer-section-social-follow">
+			<ul class="footer-menu">
+				<li class="footer-menu-item social-share-item">
+					<div class="fb-like" data-href="https://www.facebook.com/fivethirtyeight" data-layout="button_count"></div>
+				</li>
+				<li class="footer-menu-item social-share-item">
+					<a href="https://twitter.com/FiveThirtyEight" class="twitter-follow-button" data-show-count="true">Follow @FiveThirtyEight</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer-section-secondary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/contact/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=contact">Contact</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/tag/fivethirtyeight-jobs/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=jobs">Jobs</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/masthead/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=masthead">Masthead</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/how-to-pitch-fivethirtyeight/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=pitch">Pitch FiveThirtyEight</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://disneyadsales.com/our-brands/abc-news/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=advertise">Advertise With Us</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="http://priv-policy.imrworldwide.com/priv/browser/us/en/optout.html" name="&amp;lpos=fivethirtyeightFooter&amp;lid=nielsen">About Nielsen Measurement</a>
+				</li>
+			</ul>
+		</div><!-- .footer-secondary-links -->
+
+		<div class="footer-section-powered-by">
+			Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=fivethirtyeight.com" rel="generator nofollow" class="powered-by-wpcom">WordPress VIP</a>		</div><!-- .powered-by -->
+
+		<div class="footer-section-tertiary-links">
+			<ul class="footer-menu">
+				<li class="menu-item">
+					<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=doNotSell" target="_blank" rel="noopener noreferrer">Do Not Sell My Info</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights" target="_blank" rel="noopener noreferrer">Your California Privacy Rights</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy" target="_blank" rel="noopener noreferrer">Children's Online Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences" target="_blank" rel="noopener noreferrer">Interest-Based Ads</a>
+				</li>
+			</ul>
+			<p>
+				&copy; 2021 ABC News Internet Ventures. All rights reserved.
+			</p>
+		</div>
+		<!-- / .footer-section-tertiary-links -->
+	</div><!-- .site-wrapper -->
+
+	<div class="footer-section-additional-info" id="footer-additional-info">
+		<div class="site-wrapper">
+			<button class="close-additional-info" id="close-additional-info" aria-label="Close"><span class="visually-hidden">Close Additional Information</span></button>
+			<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS">Terms of Use</a> and <a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy">Privacy Policy</a> and Safety Information/<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights">Your California Privacy Rights</a>/<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy">Children's Online Privacy Policy</a> are applicable to you. © 2021 ABC News Internet Ventures. All rights reserved. <a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences">Interest-Based Ads</a>. <a href="https://disneyprivacycenter.com/cookies-policy-translations/cookies-policy/">Cookie Policy</a>.
+		</div><!-- .site-wrapper -->
+	</div><!-- .footer-section-additional-info -->
+</footer><!-- .site-footer -->
+	<div id="sharing_email" style="display: none;">
+		<form action="/features/are-ambitious-parts-of-democrats-agenda-good-for-democracy-or-just-the-democratic-party/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://fivethirtyeight.com/wp-content/mu-plugins/jetpack-9.6/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script id='wp-util-js-extra'>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script id='fte-main-js-extra'>
+var ESPNSocial = {"fbVersion":"6.0","fbAppId":"797620670264818"};
+</script>
+<script id='dtci-ads-js-extra'>
+var DTCIAdConfig = {"adSlotsToRefresh":["Banner","InContent","incontentTeads","incontentTeads2","OutStream","DailyShowHP"],"adUnitPath":"\/21783347309\/abc-news\/fivethirtyeight.com\/web\/politics","placements":{"Banner":{"out-of-page":false,"sizes":[[970,250],[970,66],[728,90],[320,50],[300,50]],"defer":"none"},"InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"incontentTeads":{"out-of-page":false,"sizes":[1,3],"defer":"none"},"incontentTeads2":{"out-of-page":false,"sizes":[1,3],"defer":"none"},"A9InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"OutStream":{"out-of-page":false,"sizes":[[1,3]],"defer":"none"},"DailyShowHP":{"out-of-page":false,"sizes":[[272,35]],"defer":"none"}},"slots":{"Banner":[],"InContent":[],"incontentTeads":[],"incontentTeads2":[],"A9InContent":[],"OutStream":[],"DailyShowHP":[]},"mappings":{"Banner":[[[1280,100],[[970,250],[970,66],[728,90]]],[[1024,100],[[970,250],[970,66],[728,90]]],[[768,100],[[728,90]]],[[0,0],[[320,50],[300,50]]]],"InContent":[[[0,0],[]],[[768,50],[300,250]]],"DailyShowHP":[[[0,0],[272,35]]]},"targeting":{"sp":"fivethirtyeight","objid":"307679","lang":"en","devType":"desktop","tag":["congress","democratic-party","joe-biden","senate-democrats","slack-chat","the-biden-administration"],"hip":"b3ea992ebf11724d6420dbc8463a02b615049c6e7aa57b98cc936bc001c52ac3"},"devType":"desktop","referringSite":null,"referralMap":{"facebook.com":"facebook","twitter.com":"twitter","t.co":"twitter","google.com":"google","bing.com":"bing","yahoo.com":"yahoo","www.espn.com":"espn","espn.com":"espn","instagram.com":"instagram","reddit.com":"reddit","bleacherreport.com":"bleacherreport","tumblr.com":"tumblr","t.umblr.com":"tumblr","pinterest.com":"pinterest","fivethirtyeight.com":"fivethirtyeight","grantland.com":"grantland","theundefeated.com":"theundefeated"},"useOverlay":"0","refreshSimulatenously":"1","disableInitialLoad":"1","a9id":"3899","a9Params":{"si_section":"politics","section":"story"}};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJyVkN0OgjAMhV/IsQDR6IXxWcZWoLi/0E7D27uoFwtREi5Pz/l60spnFDp4Bs8y2jSgJ6k6LVQyGEQPitMMeUQETHIi2dmg71Q59NVEB/kH/6R2YQP2Ilq1iC4xB1+wK6dcgl7bZOAdyzIx2l8dPILLIaDoRY8P4BFnXgCHkYuelbPRA64Ds3WMYY1CmfIDWe0lLl/g5q71qT42bVOf2+kFX0qhKg=='></script>
+<script id='sharing-js-js-extra'>
+var sharing_js_options = {"lang":"en","counts":"","is_stats_active":"1"};
+</script>
+<script src='https://fivethirtyeight.com/wp-content/mu-plugins/jetpack-9.6/_inc/build/sharedaddy/sharing.min.js?ver=9.6.1' id='sharing-js-js'></script>
+<script id='sharing-js-js-after'>
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+</script>
+<script src='https://stats.wp.com/e-202116.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.6.1',blog:'144970551',post:'307679',tz:'-4',srv:'fivethirtyeight.com'} ]);
+	_stq.push([ 'clickTrackerInit', '144970551', '307679' ]);
+</script>
+</body>
+</html>
